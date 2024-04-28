@@ -1,22 +1,23 @@
-﻿namespace Ejercicio_7;
-
-using System;
-using System.IO;
-
-class Program
+﻿namespace Ejercicio_7
 {
-    static void Main(string[] args)
+    using System;
+    using System.IO;
+
+    class Program
     {
-        try
+        static void Main(string[] args)
         {
-            foreach(var fichero in args)
+            try
             {
-                Console.WriteLine($"{Path.GetFileName(fichero)}: {File.ReadAllText(fichero)} -");
+                foreach(var fichero in args)
+                {
+                    Console.WriteLine($"{Path.GetFileName(fichero)}: {File.ReadAllText(fichero)} -");
+                }
             }
-        }
-        catch (FileNotFoundException)
-        {
-            Console.WriteLine("El archivo no se ha encontrado.");
+            catch (FileNotFoundException)
+            {
+                Console.WriteLine("El archivo no se ha encontrado.");
+            }
         }
     }
 }
